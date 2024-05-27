@@ -1,8 +1,25 @@
-# React + Vite
+# Freela-Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Status Atual do Projeto
+Em desenvolvimento (Estágio Inicial)
 
-Currently, two official plugins are available:
+# Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ### React
+- ### Tailwind
+
+# Desenvolvedores
+  * [Bryan Lemes](https://github.com/BryanMzili)
+  * [Antônio Martins](https://github.com/AntonioMartinss)
+  * [Jhonatan Saraiva](https://github.com/jhojh)
+
+# Descrição do projeto
+Web App de Jogos com React.js + TailwindCSS
+
+# Executar
+## Banco de Dados
+
+## Front-end (Este Repositório).
+    
+## Back-end
+  * [Link do Repositório](https://github.com/BryanMzili/Freela-Back-end)
