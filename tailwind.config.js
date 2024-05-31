@@ -11,8 +11,9 @@ export default {
         'JetBrains': ['JetBrains'], 
       },
       colors:{
-        'mid-night': "#27374D",
-        'slate-gray': '#526D82'
+        'dark-blue-gray': "#222831",
+        'dark-slate-gray': '#31363F',
+        'light-gray': '#EEEEEE'
       }
     },
   },

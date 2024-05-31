@@ -10,7 +10,7 @@ const Aside = () => {
   const switchToLogin = () => setIsLogin(true);
 
   return (
-    <aside className="w-2/5 flex bg-slate-gray justify-center p-4 items-center flex-col font-JetBrains" >
+    <aside className="w-2/5 flex bg-dark-slate-gray justify-center p-4 items-center flex-col font-JetBrains" >
         {isLogin ? (<FormLogin switchToSignup={switchToSignup}/>
         ) : (
         <FormRegister switchToLogin={switchToLogin}/>
