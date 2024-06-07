@@ -11,7 +11,6 @@ Em desenvolvimento (Estágio Inicial)
 # Desenvolvedores
   * [Bryan Lemes](https://github.com/BryanMzili)
   * [Antônio Martins](https://github.com/AntonioMartinss)
-  * [Jhonatan Saraiva](https://github.com/jhojh)
 
 # Descrição do projeto
 Web App de Jogos com React.js + TailwindCSS
