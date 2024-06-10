@@ -20,9 +20,9 @@ function App() {
           <Route 
                         path='/jogos' 
                         element={
-                            <PrivateRoute>
+                            // <PrivateRoute>
                                 <Games />
-                            </PrivateRoute>
+                            // </PrivateRoute>
                         } 
                     />
           <Route path='*' element={<NotFound/>}/>

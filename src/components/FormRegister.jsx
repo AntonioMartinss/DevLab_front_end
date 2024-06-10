@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useFetch } from '../hooks/useFetch';
 
-import { useNavigate } from 'react-router-dom';
 
 const FormRegister = ({ switchToLogin }) => {
-    const url = "http://localhost:8080/Freela/usuario/cadastro";
+    const url = "http://26.87.137.91:8080/DevLab/usuario/cadastro";
 
-    const navigate = useNavigate();
 
     const [usuario, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -85,7 +83,7 @@ const FormRegister = ({ switchToLogin }) => {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Senha"
                 />
-                <input className="w-full h-10 p-2 bg-light-gray cursor-pointer hover:bg-indigo-950 hover:text-white transition-all" type="submit" value="Entrar" />
+                <input className="w-full h-10 p-2 bg-white cursor-pointer hover:bg-indigo-950 hover:text-white transition-all" type="submit" value="Entrar" />
             </form>
 
             {message && <p className='pt-2 text-sm'>{message}</p>}

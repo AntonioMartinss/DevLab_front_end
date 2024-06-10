@@ -9,16 +9,17 @@ export function PrivateRoute({ children }) {
 
         try {
 
-            const response = await fetch('http://localhost:8080/Freela/usuario/logado', {
+            const response = await fetch('http://26.87.137.91:8080/DevLab/usuario/logado', {
                 method: 'GET',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Authorization': sessionStorage.getItem("token")
+
                 }
             });
             
     
             if (response.status === 200) {
-                const data = await response.json();
+                const data = await response.text();
                 if (data === "Usuário Logado") {
                     setIsAuthenticated(true);
                 } else {

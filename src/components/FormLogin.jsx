@@ -10,7 +10,7 @@ const FormLogin = ({ switchToSignup }) => {
 
     const navigate = useNavigate();
 
-    const url = "http://localhost:8080/Freela/usuario/login"; 
+    const url = "http://26.87.137.91:8080/DevLab/usuario/login"; 
 
     const [usuario, setName] = useState('');
     const [senha, setPassword] = useState('');
@@ -68,7 +68,7 @@ const FormLogin = ({ switchToSignup }) => {
                     <input className={`w-full h-10 p-2 border ${inputErrors.senha ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-mid-night`} type="password" name="senha" value={senha}
                     onChange={(e) => setPassword(e.target.value)}  required placeholder="Senha" />
                     
-                    <input  className="w-full h-10 p-2 bg-light-gray  cursor-pointer hover:bg-indigo-950 hover:text-white transition-all" type="submit" value="Entrar" />
+                    <input  className="w-full h-10 p-2 bg-white  cursor-pointer hover:bg-indigo-950 hover:text-white transition-all" type="submit" value="Entrar" />
 
                 </form>
                 {message && <p className='text-sm'>{message}</p>}

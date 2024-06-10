@@ -37,6 +37,10 @@ export const useFetch = (url) => {
 
                     const textResponse = await res.text();
 
+                    sessionStorage.setItem("token", textResponse.replace(/'/g, '"'));
+
+                    
+
                     setResponse({
                         status: res.status,
                         data: textResponse.message || textResponse

@@ -11,13 +11,20 @@ Em desenvolvimento (Estágio Inicial)
 # Desenvolvedores
   * [Bryan Lemes](https://github.com/BryanMzili)
   * [Antônio Martins](https://github.com/AntonioMartinss)
-  * [Jhonatan Saraiva](https://github.com/jhojh)
+
+# UX & UI Designer
+
+* [Henrique Pimentel](https://www.behance.net/HenriquePimentelCs)
 
 # Descrição do projeto
-Web App de Jogos com React.js + TailwindCSS
+
+Plataforma Web de Jogos com React.js + TailwindCSS + Node.js
 
 # Executar
+
 ## Banco de Dados
+
+* 
 
 ## Front-end (Este Repositório).
     
