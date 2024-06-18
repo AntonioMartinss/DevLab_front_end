@@ -21,13 +21,9 @@ Em desenvolvimento (Estágio Inicial)
 
 # Descrição do projeto
 
-Plataforma Web de Jogos com React.js + TailwindCSS + Node.js
+Plataforma de Jogos com React.js + TailwindCSS + Node.js
 
 # Executar
-
-## Banco de Dados
-
-* 
 
 ## Front-end (Este Repositório).
     
