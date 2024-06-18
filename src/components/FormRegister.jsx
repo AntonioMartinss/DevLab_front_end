@@ -47,6 +47,10 @@ const FormRegister = ({ switchToLogin }) => {
                     setInputErrors({ usuario: false, email: true, senha: true });
                 }
                 
+            } else if (response.status === 422) {
+                setMessage(response.data);
+                setInputErrors({ usuario: true, email: false, senha: false });
+                
             }
         }
     }, [response]);
@@ -67,7 +71,7 @@ const FormRegister = ({ switchToLogin }) => {
                 <input
                     className={`w-full h-10 p-2 border ${inputErrors.email ? 'border-red-500' : 'border-gray-300'}  rounded-md focus:outline-none focus:ring-2 focus:ring-mid-night`}
                     type="email"
-                    
+                    required
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

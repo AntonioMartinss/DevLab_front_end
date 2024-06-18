@@ -11,10 +11,13 @@ Em desenvolvimento (Estágio Inicial)
 # Desenvolvedores
   * [Bryan Lemes](https://github.com/BryanMzili)
   * [Antônio Martins](https://github.com/AntonioMartinss)
+<<<<<<< HEAD
 
 # UX & UI Designer
 
 * [Henrique Pimentel](https://www.behance.net/HenriquePimentelCs)
+=======
+>>>>>>> 1da479992515bfd81f5ecd9c4c06c1f2541746ff
 
 # Descrição do projeto
 
