@@ -9,7 +9,7 @@ import LastPlayed from '../components/LastPlayed'
 
 const Games = () => {
   return (
-    <div className='font-JetBrains text-sky-blue bg-deep-black min-h-screen'>
+    <div className=' text-sky-blue bg-deep-black min-h-screen'>
       <Header />
       <main>
         <LastPlayed />
