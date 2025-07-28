@@ -17,12 +17,12 @@ const Footer = () => {
             <li className="text-center list-none"><a href="https://github.com/BryanSLemes/DevLab-Back-end">Bryan</a></li>
             <li className="text-center list-none"><a href="https://www.behance.net/HenriquePimentelCs">Henrique</a></li>
           </div>
-          <div className="w-full md:w-1/3 flex items-center justify-end">
-            <img src="logo.png" alt="Logo do Site" className="h-12" />
+          <div className="w-full md:w-1/3  flex items-center justify-end">
+            <h1 className="text-md:text-2xl lg:text-4xl">DevLab</h1>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-6 pt-4 text-sm text-white text-center md:text-left">
-          <p>&copy; 2024 DevLab. Todos os direitos reservados.</p>
+          <p>Desde 2024 - DevLab.</p>
         </div>
       </div>
     </footer>
