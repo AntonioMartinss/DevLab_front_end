@@ -3,7 +3,7 @@ import { useFetch } from '../hooks/useFetch';
 
 
 const FormRegister = ({ switchToLogin }) => {
-    const url = "http://26.87.137.91:8080/DevLab/usuario/cadastro";
+    const url = "http://localhost:8080/DevLab/usuario/cadastro";
 
 
     const [usuario, setName] = useState('');
@@ -14,16 +14,44 @@ const FormRegister = ({ switchToLogin }) => {
 
     const { httpConfig, response } = useFetch(url);
 
+    const encrypt = (data) => {
+        const publicKeyPEM = `-----BEGIN PUBLIC KEY-----MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJLJPbG2Gw9A5RmEe4MdLkeYNBQADFVsMhNHdO0f3vvfFz+Pln3F857fUFHBFReJ9L0BlEDCRNRn+0g6cPpnx30CAwEAAQ==-----END PUBLIC KEY-----`;
+        const publicKey = KEYUTIL.getKey(publicKeyPEM);
+        const decryptedData = stringToArray(JSON.stringify(data));
+        const encryptedData = [];
+
+        decryptedData.forEach(element => {
+            const encryptedHex = KJUR.crypto.Cipher.encrypt(element, publicKey);
+            encryptedData.push(hextob64(encryptedHex));
+        });
+
+        return encryptedData;
+    };
+    function stringToArray(inputString) {
+        let resultArray = [];
+        let currentIndex = 0;
+        let maxLength = 53;
+
+        while (currentIndex < inputString.length) {
+            let segment = inputString.slice(currentIndex, currentIndex + maxLength);
+            resultArray.push(segment);
+            currentIndex += maxLength;
+        }
+
+        return resultArray;
+    }
+    
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const formData = {
+        const formData = encrypt({
             usuario,
             email,
             senha
-        };
+        });
 
-        httpConfig(formData, "POST");
+        httpConfig({data: formData}, "POST");
     };
 
     useEffect(() => {

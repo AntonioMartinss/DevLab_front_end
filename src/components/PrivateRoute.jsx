@@ -6,10 +6,9 @@ export function PrivateRoute({ children }) {
     const [isLoading, setIsLoading] = useState(true);
 
     const checkAuth = async () => {
-
         try {
 
-            const response = await fetch('http://26.87.137.91:8080/DevLab/usuario/logado', {
+            const response = await fetch('http://localhost:8080/DevLab/usuario/logado', {
                 method: 'GET',
                 headers: {
                     'Authorization': sessionStorage.getItem("token")
@@ -17,15 +16,11 @@ export function PrivateRoute({ children }) {
                 }
             });
             
-    
             if (response.status === 200) {
-                const data = await response.text();
-                if (data === "Usuário Logado") {
+                 const data = await response.text();
+                
                     setIsAuthenticated(true);
-                } else {
-                    setIsAuthenticated(false);
-                }
-            } else if (response.status === 401) {
+            } else if (response.status === 401 || response.status === 403) {
                 setIsAuthenticated(false);
             }
         } catch (error) {
@@ -42,7 +37,7 @@ export function PrivateRoute({ children }) {
     }, []);
 
     if (isLoading) {
-        return <div>Carregando...</div>; // Ou qualquer outro indicador de carregamento
+        return <div>Carregando...</div>;
     }
 
     if (!isAuthenticated) {
