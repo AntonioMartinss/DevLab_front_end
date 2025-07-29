@@ -1,24 +1,27 @@
 import { useState } from "react"
-import FormLogin from "./FormLogin"
-import FormRegister from "./FormRegister"
+import FormLogin from "../components/FormLogin"
+import FormRegister from "../components/FormRegister"
+import Header from "../components/Header"
 
-const Aside = () => {
-
+const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const switchToSignup = () => setIsLogin(false);
   const switchToLogin = () => setIsLogin(true);
 
   return (
-    <aside className="w-2/5 flex justify-center p-4 items-center flex-col font-JetBrains" >
+    <div className="w-auto">
+      <Header/>
+    <div className="h-screen flex justify-center p-4 items-center font-JetBrains" >
+      
         {isLogin ? (<FormLogin switchToSignup={switchToSignup}/>
         ) : (
         <FormRegister switchToLogin={switchToLogin}/>
       )}
         
-    </aside>
-
+    </div>
+</div>
   )
 }
 
-export default Aside
+export default Auth

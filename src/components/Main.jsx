@@ -1,18 +1,16 @@
-
-import PlatForm from '../assets/images/download.jpeg';
-
 const Main = () => {
   return (
-    <main className="w-3/5 flex bg-background items-center justify-center flex-col p-10">
-      <h1 className="text-3xl text-white mb-6 text-center">Plataforma de jogos em Lan 100% atualizada</h1>
+    <main className="w-3/5 flex items-center justify-center flex-col p-10 text-center">
+      <h1 className="text-5xl font-bold text-text mb-6 leading-snug">DevLab</h1>
+      <h2 className="text-2xl font-bold text-text mb-6 leading-snug">
+        Plataforma de jogos
+      </h2>
 
-      <div className="pt-10 flex flex-col items-center">
-        
-        <img src={PlatForm} alt="plataforma de jogos" className="w-96 h-auto mb-4" />
-        <p className="text-white text-center">
-          Plataforma de jogos gratuita, utilizando React.js, Tailwind, Java, e MongoDB. Repositório público.
-        </p>
-      </div>
+      <p className="text-text max-w-xl leading-relaxed text-lg">
+        Conecte-se com amigos, jogue em rede local e gerencie partidas com tecnologia de ponta. Plataforma gratuita desenvolvida com React.js, TailwindCSS, Java e MongoDB.
+      </p>
+
+      <div className="mt-10 w-full h-[1px] bg-sky-blue opacity-30" />
     </main>
   );
 };

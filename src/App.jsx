@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { PrivateRoute } from './components/PrivateRoute';
 
-import Home from './pages/Home'
+import Auth from './pages/Auth'
 import Games from './pages/Games'
 import NotFound from './pages/NotFound'
 import Footer from './components/Footer';
@@ -15,7 +15,7 @@ function App() {
     <div className='h-screen'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Auth />} />
           <Route
             path='/biblioteca'
             element={
@@ -28,9 +28,8 @@ function App() {
           <Route
             path='/desenvolvedores'
             element={
-              <PrivateRoute>
                 <Developers />
-              </PrivateRoute>
+
             }
           />
           <Route path='*' element={<NotFound />} />

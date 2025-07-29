@@ -4,8 +4,8 @@ import Antonio from '../assets/images/antonio.webp'
 import Bryan from '../assets/images/bryan.jpeg'
 import Henrique from '../assets/images/henrique.jpeg'
 import { Linkedin, Github, Palette } from 'lucide-react'
+import { typography } from "../assets/fonts/typography"
 
-// Componente individual do cartão
 function DeveloperCard({ developer }) {
   return (
     <div className="w-80 h-80 bg-background rounded-2xl shadow-2xl p-8 flex flex-col items-center justify-center text-center transform hover:scale-105 transition-transform duration-300 relative">
@@ -18,11 +18,11 @@ function DeveloperCard({ developer }) {
         />
       </div>
 
-      <h1 className="text-2xl font-bold text-text mb-2">
+      <h2 className={`font-bold text-text mb-2 ${typography.general.heading2}`}>
         {developer.name}
-      </h1>
+      </h2>
 
-      <p className="text-text mb-6 text-sm">
+      <p className={`text-text mb-6 ${typography.general.body}`}>
         {developer.title}
       </p>
 
@@ -101,8 +101,8 @@ function Developers() {
       <div className="min-h-screen p-8">
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-text mb-4">Nossa Equipe</h1>
-          <p className="text-text opacity-90 text-lg">Conheça os desenvolvedores por trás deste projeto!</p>
+          <h1 className={`font-bold text-text mb-4 ${typography.general.heading1}`}>Nossa Equipe</h1>
+          <p className={`text-text opacity-90 ${typography.general.subtitle}`}>Conheça os desenvolvedores por trás deste projeto!</p>
         </div>
 
         <div className="flex items-center justify-center">
@@ -114,28 +114,28 @@ function Developers() {
         </div>
          <div className="max-w-4xl mx-auto mt-16">
           <div className="bg-background rounded-2xl shadow-2xl p-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-text text-center mb-8">
+            <h2 className={`font-bold text-text text-center mb-8 ${typography.general.heading1}`}>
               Nossa História
             </h2>
             
             <div className="prose prose-lg max-w-none">
-              <p className="text-text text-base md:text-lg leading-relaxed mb-6">
+              <p className={`text-text text-base leading-relaxed mb-6 ${typography.general.base}`}>
                 Somos amigos há mais de 17 anos, e desde pequenos sempre tivemos uma paixão em comum: 
                 a área de Tecnologia. Mesmo seguindo caminhos diferentes em nossas 
                 formações acadêmicas, sempre partilhamos de objetivos e sonhos semelhantes.
               </p>
               
-              <p className="text-text text-base md:text-lg leading-relaxed mb-6">
+              <p className={`text-text text-base leading-relaxed mb-6 ${typography.general.base}`}>
                 Antônio seguiu no Ensino Médio/Técnico em Informática no <strong>Instituto Federal Sul Rio Grandense em Charqueadas</strong>, onde aprofundou seus conhecimentos em desenvolvimento 
                 e tecnologias na área de TI.
               </p>
               
-              <p className="text-text text-base md:text-lg leading-relaxed mb-6">
+              <p className={`text-text text-base leading-relaxed mb-6 ${typography.general.base}`}>
                 Bryan iniciou o Ensino Técnico no <strong>Senac em Porto Alegre</strong>, e para 
                 complementar suas habilidades na área de TI, seguiu seus estudos na <strong>Uninter em São Jerônimo</strong>, ambas no Rio Grande do Sul.
               </p>
               
-              <p className="text-text text-base md:text-lg leading-relaxed">
+              <p className={`text-text text-base leading-relaxed mb-6 ${typography.general.base}`}>
                 Essa amizade de longa data, combinada com nossa paixão compartilhada pela tecnologia, 
                 nos permite trabalhar juntos, criando ótimos projetos, como é o caso do <strong>DevLab</strong>. 
                 Transformamos ideias em realidade através da programação!
