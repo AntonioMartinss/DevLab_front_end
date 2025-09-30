@@ -4,10 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { PrivateRoute } from './components/PrivateRoute';
 
 import Auth from './pages/Auth'
-import Games from './pages/Games'
+import Library from './pages/Library'
 import NotFound from './pages/NotFound'
 import Footer from './components/Footer';
 import Developers from './pages/Developers';
+import GameSelector from './games/GameSelector';
+import { games } from './data/games';
 
 function App() {
 
@@ -20,7 +22,23 @@ function App() {
             path='/biblioteca'
             element={
               <PrivateRoute>
-                <Games />
+                <Library />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='jogos/dama'
+            element={
+              <PrivateRoute>
+                <GameSelector game={games[1]}/>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='jogos/jogo-da-velha'
+            element={
+              <PrivateRoute>
+                <GameSelector game={games[0]} />
               </PrivateRoute>
             }
           />

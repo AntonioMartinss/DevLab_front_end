@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'JetBrains': ['JetBrains'], 
+        'JetBrains': ['JetBrains'],
       },
       colors:{
         'background': "#222328",
