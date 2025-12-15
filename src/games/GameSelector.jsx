@@ -8,7 +8,7 @@ const GameSelector = ({ game }) => {
         <div className="w-1/2 flex justify-center">
           <img
             src={game.image}
-            alt="Jogo da Velha"
+            alt={game.title}
             className="w-8/12 h-auto"
           />
         </div>
