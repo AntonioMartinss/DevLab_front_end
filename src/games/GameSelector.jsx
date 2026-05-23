@@ -1,29 +1,28 @@
+import React from "react";
 import Header from "../components/Header";
+import TicTacToe from "../games/TicTacToe";
+import Checkers from "../games/Checkers";
+
+
+const GAME_COMPONENTS = {
+  "tictactoe": TicTacToe,
+  "jogo-da-velha": TicTacToe, 
+  "checkers": Checkers,
+  "dama": Checkers,
+};
 
 const GameSelector = ({ game }) => {
+  const SpecificGame = GAME_COMPONENTS[game?.id] || (() => (
+    <div className="text-white text-center mt-20 text-2xl">
+      Jogo não encontrado ou em desenvolvimento.
+    </div>
+  ));
+
   return (
     <div>
       <Header />
-      <div className="w-full h-screen flex items-center px-20">
-        <div className="w-1/2 flex justify-center">
-          <img
-            src={game.image}
-            alt={game.title}
-            className="w-8/12 h-auto"
-          />
-        </div>
-
-        <div className="w-1/2 flex flex-col justify-center">
-          <h1 className="text-white text-4xl mb-6 sm:text-1xl">{game.title}</h1>
-          <p className="text-white text-lg leading-relaxed">
-            {game.description}
-          </p>
-          <div className="mt-8 flex flex-col items-start text-white">
-            <button className="bg-background m-4 p-2 rounded-xl border-2 border-gray-200 ">Partida Publica</button>
-            <button className="bg-background m-4 p-2 rounded-xl border-2 border-gray-200 ">Criar partida Privada</button>
-            <button className="bg-background m-4 p-2 rounded-xl border-2 border-gray-200 ">Entrar em partida privada</button>
-          </div>
-        </div>
+      <div className="w-full flex justify-center">
+        <SpecificGame />
       </div>
     </div>
   );

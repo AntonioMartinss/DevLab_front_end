@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { useNavigate } from 'react-router-dom';
 import { typography } from "../assets/fonts/typography.js"
-
+import {baseURL} from '../../config.js';
 const FormLogin = ({ switchToSignup }) => {
   const navigate = useNavigate();
-  const url = "http://localhost:8080/DevLab/usuario/login";
+  const url = `${baseURL}/DevLab/usuario/login`;
 
   const [usuario, setName] = useState('');
   const [senha, setPassword] = useState('');

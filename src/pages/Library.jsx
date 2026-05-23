@@ -1,34 +1,33 @@
-import Header from '../components/Header'
-import LastPlayed from '../components/LastPlayed'
-import { typography } from '../assets/fonts/typography'
-import { games } from '../data/games'
-import { useNavigate } from 'react-router-dom'
-import { createContext, useContext, useState } from 'react'
+import React, { createContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+import LastPlayed from '../components/LastPlayed';
+import { typography } from '../assets/fonts/typography';
+import { games } from '../data/games';
 
 export const GameContext = createContext();
 
 function GamesCard({ game }) {
   const navigate = useNavigate();
-
-  const { setSelectedGameId } = useContext(GameContext);
+  const { setSelectedGameId } = React.useContext(GameContext);
 
   const handlePlayGame = () => {
-    setSelectedGameId(game.id)
-    navigate(`/${game.url}`)
-  }
+    setSelectedGameId(game.id);
+    localStorage.setItem("lastPlayedId", game.id);
+    navigate(`/${game.url}`);
+  };
+
   return (
-    <div className="relative w-72 h-56 bg-background ml-6 mr-6 flex flex-col m-4 rounded overflow-hidden ">
+    <div className="relative w-72 h-56 bg-background ml-6 mr-6 flex flex-col m-4 rounded overflow-hidden">
       <div className="relative">
         {game.image && (
-          <img
-            src={game.image}
-            alt={game.title}
-            className="w-full h-44 rounded rounded-b-none"
-          />
+          <img src={game.image} alt={game.title} className="w-full h-44 rounded rounded-b-none" />
         )}
-        <button onClick={handlePlayGame} className="absolute inset-0 flex items-center justify-center bg-background text-sky-blue opacity-0 hover:opacity-100 transition-opacity duration-300 hover:border-2 border-sky-blue">
-          Jogar agora!
-
+        <button 
+          onClick={handlePlayGame} 
+          className="group absolute inset-0 flex flex-col items-center justify-center bg-background/95 text-sky-blue opacity-0 hover:opacity-100 transition-all duration-300 border-sky-blue hover:border-2 p-6"
+        >
+          <span>JOGAR AGORA!</span>
         </button>
       </div>
       <div className="flex justify-between text-left ml-6 mr-6 mt-3">
@@ -39,12 +38,11 @@ function GamesCard({ game }) {
 }
 
 function Library() {
-
-  const [selectGameId, setSelectedGameId] = useState(null);
+  const [selectGameId, setSelectedGameId] = useState(localStorage.getItem("lastPlayedId"));
 
   return (
     <GameContext.Provider value={{ selectGameId, setSelectedGameId }}>
-      <div className=' text-sky-blue bg-deep-black min-h-screen'>
+      <div className='text-sky-blue bg-deep-black min-h-screen'>
         <Header />
         <main>
           <LastPlayed />
@@ -62,8 +60,7 @@ function Library() {
         </main>
       </div>
     </GameContext.Provider>
-  )
-
+  );
 }
 
-export default Library
+export default Library;

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { typography } from "../assets/fonts/typography.js"
+import {baseURL} from '../../config.js';
 
 const FormRegister = ({ switchToLogin }) => {
-  const url = "http://localhost:8080/DevLab/usuario/cadastro";
+  const url = `${baseURL}/DevLab/usuario/cadastro`;
 
   const [usuario, setName] = useState('');
   const [email, setEmail] = useState('');

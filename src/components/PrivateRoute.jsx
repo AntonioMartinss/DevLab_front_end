@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import {baseURL} from '../../config.js';
 
 export function PrivateRoute({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -8,7 +9,7 @@ export function PrivateRoute({ children }) {
     const checkAuth = async () => {
         try {
 
-            const response = await fetch('http://localhost:8080/DevLab/usuario/logado', {
+            const response = await fetch(`${baseURL}/DevLab/usuario/logado`, {
                 method: 'GET',
                 headers: {
                     'Authorization': sessionStorage.getItem("token")

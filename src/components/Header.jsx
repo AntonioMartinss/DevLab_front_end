@@ -27,7 +27,9 @@ const Header = () => {
     <>
       <header className="mx-44 mt-4 rounded-full border border-gray-500 p-2 flex justify-between text-center max-sm:mx-12">
         <div className="">
-            <h1 className={`${typography.general.heading1} text-text ml-4`}>
+            <h1 
+            onClick={() => navigate("/biblioteca")}
+            className={`${typography.general.heading1} text-text ml-4 cursor-pointer`}>
               DevLab
             </h1>
         </div>
